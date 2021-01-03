@@ -12,25 +12,22 @@ import './App.css';
 
 
 const App = (props) => {
-
 	return (
 		<BrowserRouter>
 			<div className="app-wrapper">
 				<Header />
-				<Navbar state={props.state.sidebar} />
+				<Navbar sidebar={props.state.sidebar} />
 				<div className="app-wrapper-content">
 					<Route path="/profile" 
 						render={ () => <Profile 
-							profilePage={props.state.profilePage} 
-							addPost={props.addPost}
-							updateNewPostText={props.updateNewPostText} /> } />
+							dispatch={props.dispatch}
+							profilePage={props.state.profilePage} /> } />
 					{/* <Route path="/dialogs" component={ SomeComponent } /> */}
 					<Route path="/dialogs" 
 						render={ () => <Dialogs 
+							dispatch={props.dispatch}
 							dialogsPage={props.state.dialogsPage}
-							newMessageText={props.state.dialogsPage.newMessageText} 
-							addMessage={props.addMessage}
-							updateNewMessageText={props.updateNewMessageText} /> } />
+							newMessageText={props.state.dialogsPage.newMessageText} /> } />
 					<Route path="/news" 
 						render={ () => <News /> } />
 					<Route path="/music" 
