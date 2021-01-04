@@ -71,7 +71,7 @@ let store = {
             this._state.dialogsPage.newMessageText = '';
             this._callSubscriber(this._state);
         } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.newMessage;
+            this._state.dialogsPage.newMessageText = action.newText;
             this._callSubscriber(this._state);
         }
     }
