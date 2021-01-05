@@ -3,7 +3,7 @@ import S from './Sidebar.module.css';
 import SidebarFriend from './SidebarFriend/SidebarFriend.jsx';
 
 const Sidebar = (props) => {
-
+    
     let SidebarFriendElements = props.friends.map( f => <SidebarFriend src={f.src} name={f.name} id={f.id} /> );
 
     return (

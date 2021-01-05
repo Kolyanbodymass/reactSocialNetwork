@@ -4,6 +4,7 @@ import {NavLink} from 'react-router-dom';
 import Sidebar from './Sidebar/Sidebar.jsx';
 
 const Navbar = (props) => {
+
     return (
         <nav className={N.nav}>
             <div className={N.item}>
