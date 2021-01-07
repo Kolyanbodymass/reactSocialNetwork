@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './components/Header/Header.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Profile from './components/Profile/Profile.jsx';
-import Dialogs from './components/Dialogs/Dialogs.jsx';
+import DialogsContainer from './components/Dialogs/DialogsContainer.jsx';
 import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
@@ -20,15 +20,10 @@ const App = (props) => {
 				<Navbar sidebar={props.state.sidebar} />
 				<div className="app-wrapper-content">
 					<Route path="/profile" 
-						render={ () => <Profile 
-							dispatch={props.dispatch}
-							profilePage={props.state.profilePage} /> } />
+						render={ () => <Profile store={props.store} /> } />
 					{/* <Route path="/dialogs" component={ SomeComponent } /> */}
 					<Route path="/dialogs" 
-						render={ () => <Dialogs 
-							dispatch={props.dispatch}
-							dialogsPage={props.state.dialogsPage}
-							newMessageText={props.state.dialogsPage.newMessageText} /> } />
+						render={ () => <DialogsContainer store={props.store} /> } />
 					<Route path="/news" 
 						render={ () => <News /> } />
 					<Route path="/music" 
