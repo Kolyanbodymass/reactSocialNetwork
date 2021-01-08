@@ -4,7 +4,7 @@ import SidebarFriend from './SidebarFriend/SidebarFriend.jsx';
 
 const Sidebar = (props) => {
     
-    let SidebarFriendElements = props.friends.map( f => <SidebarFriend src={f.src} name={f.name} id={f.id} /> );
+    let SidebarFriendElements = props.friends.map( f => <SidebarFriend src={f.src} name={f.name} key={f.id} id={f.id} /> );
 
     return (
        <div className={S.sidebar}>
