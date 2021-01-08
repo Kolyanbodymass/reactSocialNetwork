@@ -5,21 +5,14 @@ import App from './App';
 import store from './redux/redux-store';
 import {Provider} from 'react-redux';
 
-let rerenderEntireTree = (state) => {
+ReactDOM.render(
+    <React.StrictMode>
+        <Provider store={store}>
+            <App store={store.getState()}/>
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-    ReactDOM.render(
-        <React.StrictMode>
-            <Provider store={store}>
-                <App sidebar={state.sidebar}/>
-            </Provider>
-        </React.StrictMode>,
-        document.getElementById('root')
-    );
-}
+// ServiceWorker.unregister();
 
-rerenderEntireTree(store.getState());
-
-store.subscribe( () => {
-    let state = store.getState();
-    rerenderEntireTree(state);
-});
