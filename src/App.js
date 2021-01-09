@@ -7,6 +7,7 @@ import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
+import UsersContainer from './components/Users/UsersContainer.jsx';
 
 import './App.css';
 
@@ -30,6 +31,8 @@ const App = (props) => {
 						render={ () => <Music /> } />
 					<Route path="/settings" 
 						render={ () => <Settings /> } />
+					<Route path="/users" 
+						render={ () => <UsersContainer /> } />
 				</div>
 			</div>
 		</BrowserRouter>
