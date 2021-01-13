@@ -1,6 +1,7 @@
 import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
-import P from './ProfileInfo.module.css';
+import styles from './ProfileInfo.module.css';
+import defaultPhoto from '../../../assets/images/default_photo.jpg';
 
 const ProfileInfo = (props) => {
 
@@ -9,13 +10,15 @@ const ProfileInfo = (props) => {
     }
 
     return (
-        <div>
-            <div>
-                <img className={P.img} src='https://www.imgworlds.com/wp-content/uploads/2015/12/generic.jpg' />
+        <div className={styles.descriptionBlock}>
+            <div className={styles.photo}>
+                {props.profile.photos.large == null ? <img src={defaultPhoto}/> : <img src={props.profile.photos.large}/> }
             </div>
-            <div className={P.descriptionBlock}>
-                <img src={props.profile.photos.large} />
-                ava + description
+            <div>
+                Full Name: {props.profile.fullName}
+            </div>
+            <div>
+                Looking for a job? {props.profile.lookingForAJob ? 'Yes, it is!' : 'No, already working'}
             </div>
         </div>
     );

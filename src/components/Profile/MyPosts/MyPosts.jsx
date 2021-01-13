@@ -1,5 +1,5 @@
 import React from 'react';
-import MP from './MyPosts.module.css';
+import styles from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
@@ -18,7 +18,7 @@ const MyPosts = (props) => {
     }
 
     return (
-        <div className={MP.postsBlock}>
+        <div className={styles.postsBlock}>
             <h3>My posts</h3>
             <div>
                 <div>
@@ -31,7 +31,7 @@ const MyPosts = (props) => {
                     <button onClick={onAddPost}>Add post</button>
                 </div>
             </div>
-            <div className={MP.posts}>
+            <div className={styles.posts}>
                 {postsElements}
             </div>
         </div>
