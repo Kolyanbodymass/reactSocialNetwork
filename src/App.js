@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/Header/Header.jsx';
+import HeaderContainer from './components/Header/HeaderContainer.jsx';
 import Navbar from './components/Navbar/Navbar.jsx';
 import DialogsContainer from './components/Dialogs/DialogsContainer.jsx';
 import News from './components/News/News.jsx';
@@ -17,7 +17,7 @@ const App = (props) => {
 	return (
 		<BrowserRouter>
 			<div className="app-wrapper">
-				<Header />
+				<HeaderContainer />
 				<Navbar sidebar={props.store.sidebar}/>
 				<div className="app-wrapper-content">
 					<Route path="/profile/:userId?" 
