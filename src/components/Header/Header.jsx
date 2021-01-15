@@ -1,18 +1,26 @@
 import React from 'react';
-import Styles from './Header.module.css';
+import styles from './Header.module.css';
 import {NavLink} from 'react-router-dom';
+import avatarAuth from '../../assets/images/avatarAuth.png';
 
 const Header = (props) => {
+
     return (
-        <header className={Styles.header}>
+        <header className={styles.header}>
             <img src="https://s1.logaster.com/static/v3/img/products/logo.png" />
 
-            <div className={Styles.loginBlock}>
+            <div className={styles.loginBlock}>
                 {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
                 
             </div>
+            <div className={styles.avatarAuth}>           
+                <img src={props.photos !== null && props.photos.small !== null ? props.photos.small : avatarAuth} />
+            </div>
         </header>
     );
+    
 }
 
 export default Header;
+
+ 

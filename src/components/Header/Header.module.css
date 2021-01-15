@@ -13,3 +13,12 @@
 .loginBlock a {
 	color: white;
 }
+
+.avatarAuth {
+	width: 50px;
+	float: right;
+}
+
+.avatarAuth img {
+	width: 100%;
+}
