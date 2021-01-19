@@ -8,6 +8,7 @@ import Settings from './components/Settings/Settings.jsx';
 import {BrowserRouter, Route} from 'react-router-dom';
 import UsersContainer from './components/Users/UsersContainer.jsx';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import LoginPage from './components/Login/Login';
 
 import './App.css';
 
@@ -33,6 +34,8 @@ const App = (props) => {
 						render={ () => <Settings /> } />
 					<Route path="/users" 
 						render={ () => <UsersContainer /> } />
+					<Route path="/login" 
+						render={ () => <LoginPage /> } />
 				</div>
 			</div>
 		</BrowserRouter>
