@@ -13,7 +13,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={styles.descriptionBlock}>
             <div className={styles.photo}>
-                {props.profile.photos.large == null ? <img src={defaultPhoto}/> : <img src={props.profile.photos.large}/> }
+                {props.profile.photos.large == null ? <img src={defaultPhoto} alt="default photo"/> : <img src={props.profile.photos.large} alt="profile photo"/> }
             </div>
             <div>
                 Full Name: {props.profile.fullName}

@@ -7,14 +7,14 @@ const Header = (props) => {
 
     return (
         <header className={styles.header}>
-            <img src="https://s1.logaster.com/static/v3/img/products/logo.png" />
+            <img src="https://s1.logaster.com/static/v3/img/products/logo.png" alt="logo"/>
 
             <div className={styles.loginBlock}>
                 {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Log out</button></div> : <NavLink to={'/login'}>Login</NavLink>}
                 
             </div>
             <div className={styles.avatarAuth}>           
-                <img src={props.photos !== null && props.photos.small !== null ? props.photos.small : avatarAuth} />
+                <img src={props.photos !== null && props.photos.small !== null ? props.photos.small : avatarAuth} alt="avatar"/>
             </div>
         </header>
     );
