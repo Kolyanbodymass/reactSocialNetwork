@@ -118,3 +118,5 @@
 [0125/082505.907:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\admin\AppData\Local\AVAST Software\Browser\User Data\Crashpad\attachments\37465637-2375-4971-a4c0-5450fa246f64: Системе не удается найти указанный путь. (0x3)
 [0125/215128.135:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
 [0126/225840.718:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0127/103423.486:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)
+[0127/110638.321:ERROR:directory_reader_win.cc(43)] FindFirstFile: Системе не удается найти указанный путь. (0x3)

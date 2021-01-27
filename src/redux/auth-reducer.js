@@ -33,7 +33,7 @@ export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_D
 export const setAuthUserPhoto = (photos) => ({type: SET_AUTH_PHOTO, photos})
 
 export const getAuthUserData = () => (dispatch) => {
-    headerAPI.getHeaderAuth()
+    return headerAPI.getHeaderAuth()
         .then(data => {
             if (data.resultCode === 0) {
                 let {id, email, login} = data.data;

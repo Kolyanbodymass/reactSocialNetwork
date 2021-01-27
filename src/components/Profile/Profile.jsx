@@ -4,7 +4,6 @@ import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './Profileinfo/ProfileInfo';
 
 const Profile = (props) => {
-
     return (
         <div>
             {/* <img className={styles.img} src='https://www.imgworlds.com/wp-content/uploads/2015/12/generic.jpg' /> */}
