@@ -2,7 +2,7 @@ import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import styles from './ProfileInfo.module.css';
 import defaultPhoto from '../../../assets/images/default_photo.jpg';
-import ProfileStatus from './ProfileStatus';
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
 
@@ -21,7 +21,7 @@ const ProfileInfo = (props) => {
             <div>
                 Looking for a job? {props.profile.lookingForAJob ? 'Yes, it is!' : 'No, already working'}
             </div>
-            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+            <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
         </div>
     );
 }
