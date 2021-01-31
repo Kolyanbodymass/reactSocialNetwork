@@ -1,0 +1,51 @@
+11a00ea - 70 minutes ago : lesson 85 (hook, useEffect)
+20e23b7 - 2 hours ago : lesson 85 (hook, useEffect)
+e47541c - 22 hours ago : lesson 83 (library reselect)
+4e352f5 - 32 hours ago : lesson 80 (initialized app)
+300cdd8 - 2 days ago : fixed a bug in the code
+58cce4d - 3 days ago : lesson 79 (stotSubmit - redux-form)
+ef0ccca - 3 days ago : lesson 78 (login and logout api, code doesn't work)
+4eb13d4 - 5 days ago : lesson 77 (redux-form field validation)
+036b513 - 6 days ago : lesson 76 (redux-form, Dialogs and MyPost)
+e65332e - 6 days ago : lesson 75 (redux-form)
+a39beb6 - 7 days ago : lesson 74 (componentDidUpdate)
+2589196 - 7 days ago : lesson 73 (http put, local state)
+c7e1866 - 8 days ago : lesson 71 (setState, local state)
+e617cfb - 8 days ago : lesson 70 (function compose)
+9be7bf5 - 9 days ago : lesson 69 (High Order Component - hoc)
+fff2c8c - 9 days ago : lesson 68 (Redirect)
+584f59b - 9 days ago : lesson 67 (refactoring kode, thunk)
+cf3266c - 11 days ago : lesson 66 (thunk practice)
+394e885 - 12 days ago : lesson 64 (disable follow/unfollow button)
+a2de57b - 13 days ago : lesson 63 (DAL, axios.create)
+6a0bec5 - 13 days ago : lesson 62 (follow - unfollow API)
+33d64f4 - 13 days ago : added small avatar in header
+2c968eb - 2 weeks ago : lesson 61 (cookie, login, auth/me )
+676227b - 2 weeks ago : lesson 60 (withPouter, props.match.params)
+3860ee4 - 2 weeks ago : homework (ProfileInfo)
+c16669f - 2 weeks ago : lesson 59 (ProfileContainer)
+a4652c4 - 2 weeks ago : lesson 58 (mapDispatchToProps refactoring)
+bcf4919 - 2 weeks ago : lesson 57 (preloader)
+c845842 - 2 weeks ago : lesson 56
+151a3eb - 2 weeks ago : lesson 55 (pagination)
+33995c8 - 2 weeks ago : lesson 54
+96166da - 3 weeks ago : lesson 53
+146edc7 - 3 weeks ago : lesson 51 (axios)'
+2604778 - 3 weeks ago : lesson 49
+216e355 - 3 weeks ago : lesson 48
+59961d0 - 3 weeks ago : homework and fixed the code
+bb0e904 - 3 weeks ago : lesson 45 (react-redux)
+30ffe9d - 3 weeks ago : lesson 43 (container component)
+4712b28 - 3 weeks ago : lesson 42 (added Redux)
+c5e2432 - 3 weeks ago : corrected the mistake in state.js
+6cae12a - 3 weeks ago : lesson 39 (added action creator)
+6b9d2a9 - 4 weeks ago : lesson №38 (added dispach)
+2f75bf9 - 4 weeks ago : lesson №34, added homework
+29113dc - 4 weeks ago : lesson №33
+113e2f8 - 4 weeks ago : lesson №31
+15de390 - 4 weeks ago : added component Sidebar (homework)
+d55b43e - 6 weeks ago : lesson 25
+52c8b7a - 6 weeks ago : lesson №24
+bc5df7d - 6 weeks ago : lesson 23
+e8164da - 8 weeks ago : css modules(lesson 15)
+77bc8eb - 8 weeks ago : Initialize project using Create React App
