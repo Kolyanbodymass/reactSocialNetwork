@@ -3,14 +3,6 @@
     height: 120px;
 }
 
-.selectedPage {
-    cursor: pointer;
-}
-
-.selectedPageActive {
-    font-weight: bold;
-}
-
 .wrapper {
     position: relative;
     width: 100%;

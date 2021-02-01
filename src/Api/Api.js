@@ -31,15 +31,9 @@ export const usersAPI = {
 export const headerAPI = {
     getHeaderAuth() {
         return instance.get(`auth/me`)
-            .then(response => {
-                return response.data
-            });
     },
     getHeaderPhoto(id) {
         return instance.get(`profile/${id}`)
-            .then(response => {
-                return response.data
-            });
     }
 }
 
