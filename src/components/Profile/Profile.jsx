@@ -8,7 +8,11 @@ const Profile = (props) => {
         <div>
             {/* <img className={styles.img} src='https://www.imgworlds.com/wp-content/uploads/2015/12/generic.jpg' /> */}
             <div className={styles.profile}>
-                <ProfileInfo profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
+                <ProfileInfo savePhoto={props.savePhoto} 
+                    isOwner={props.isOwner} 
+                    profile={props.profile} 
+                    status={props.status} 
+                    updateStatus={props.updateStatus} />
                 <MyPostsContainer />
             </div>
         </div>
