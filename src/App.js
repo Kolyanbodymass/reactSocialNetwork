@@ -4,7 +4,8 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
-import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+// import { BrowserRouter, Route, withRouter } from 'react-router-dom';
+import { HashRouter, Route, withRouter } from 'react-router-dom';
 import UsersContainer from './components/Users/UsersContainer.jsx';
 import LoginPage from './components/Login/Login';
 import {connect} from 'react-redux';
@@ -68,12 +69,19 @@ const AppContainer = compose(
 	withRouter,
 	connect(mapStateToProps, {initializeApp}))(App);
 
+// const SamuraiJSApp = (props) => {
+// 	return <BrowserRouter basename={process.env.PUBLIC_URL}>
+// 		<Provider store={store}>
+// 			<AppContainer />
+// 		</Provider>
+// 	</BrowserRouter>
+// }
 const SamuraiJSApp = (props) => {
-	return <BrowserRouter>
+	return <HashRouter>
 		<Provider store={store}>
 			<AppContainer />
 		</Provider>
-	</BrowserRouter>
+	</HashRouter>
 }
 
 export default SamuraiJSApp;
