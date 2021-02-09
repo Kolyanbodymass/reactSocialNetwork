@@ -70,7 +70,7 @@ export const updateStatus = (status) => async (dispatch) => {
             dispatch(setStatus(status));
         }
     } catch(error) {
-        
+        //
     }
 }
 
@@ -85,11 +85,18 @@ export const savePhoto = (file) => async (dispatch) => {
 export const saveProfile = (profile) => async (dispatch, getState) => {
     const userId = getState().auth.id;
     const response = await profileAPI.saveProfile(profile)
+
     if (response.data.resultCode === 0) {
         dispatch(getUserProfile(userId));
     } else {
-        dispatch(stopSubmit("edit-profile", {"contacts": {"facebook": response.data.messages[0]} }));
-        return Promise.reject(response.data.messages[0]);
+        const string = response.data.messages[0];
+        const splitString = () => {
+            const arrayOfStrings = string.split('>');
+            return arrayOfStrings[1].slice(0, -1).toLowerCase();
+        }
+
+        dispatch(stopSubmit("edit-profile", {"contacts": {[splitString()]: string}} ));
+        return Promise.reject(string);
     }
 }
 
