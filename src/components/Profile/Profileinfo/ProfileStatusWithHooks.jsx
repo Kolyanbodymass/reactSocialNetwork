@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import styles from '../../common/FormsControls/FormsControls.module.css';
 
 const ProfileStatusWithHooks = (props) => {
     
@@ -37,6 +38,9 @@ const ProfileStatusWithHooks = (props) => {
                     value={status} />
                 </div>
             }
+            <div>
+                {props.errorStatus && <div className={styles.formSummaryError}>{props.errorStatus}</div>}
+            </div>
         </div>
     )    
 }
