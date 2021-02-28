@@ -61,6 +61,7 @@ export const setErrorStatus = (errorStatus) => ({ type: SET_ERROR_STATUS, errorS
 
 export const getUserProfile = (userId) => async (dispatch) => {
     let response = await usersAPI.getProfile(userId);
+
     dispatch(setUserProfile(response.data));
 }
 

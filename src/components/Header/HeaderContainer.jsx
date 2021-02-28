@@ -17,6 +17,4 @@ let mapStateToProps = (state) => ({
     photos: state.auth.photos
 });
 
-
-
 export default connect(mapStateToProps, {logout})(HeaderContainer);

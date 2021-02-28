@@ -32,8 +32,8 @@ export const headerAPI = {
     getHeaderAuth() {
         return instance.get(`auth/me`)
     },
-    getHeaderPhoto(id) {
-        return instance.get(`profile/${id}`)
+    getHeaderPhoto(userId) {
+        return instance.get(`profile/` + userId)
     }
 }
 
