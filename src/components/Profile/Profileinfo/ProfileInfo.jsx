@@ -36,13 +36,13 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
     return (
         <div className={styles.descriptionBlock}>
             <div>
-                <img onClick={handleClick} src={profile.photos.large || defaultPhoto} className={styles.photo}  alt="profile photo" title="upload new photo"/>
+                <img onClick={handleClick} src={profile.photos.large || defaultPhoto} className={styles.photo}  alt="avatar" title="upload new photo"/>
             </div>
             <div>
                 {isOwner && 
                     <div className={styles.wrapperInput}>
                         <input ref={(input) => { loadInput = input; }} className={styles.inputFile} type={"file"} id="input__file" onChange={onMainPhotoSelected}/>
-                        <label className={styles.inputFileButton} for="input__file">Upload new photo</label>
+                        <label className="button" htmlFor="input__file">Upload new photo</label>
                     </div>}
             </div>
             {editMode ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}

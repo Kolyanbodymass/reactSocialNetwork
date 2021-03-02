@@ -33,7 +33,7 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, payload: {id, email, login, isAuth} })
+export const setAuthUserData = (id, email, login, isAuth, photos) => ({ type: SET_USER_DATA, payload: {id, email, login, isAuth, photos} })
 export const setAuthUserPhoto = (photos) => ({type: SET_AUTH_PHOTO, photos})
 
 export const getCaptchaUrlSuccess = (captchaUrl) => ({ type: GET_CAPTCHA_URL_SUCCESS, payload: {captchaUrl} })
@@ -43,9 +43,7 @@ export const getAuthUserData = () => async (dispatch) => {
 
     if (response.data.resultCode === 0) {
         let {id, email, login} = response.data.data;
-        dispatch(setAuthUserData(id, email, login, true));
-
-        getAuthUserPhoto(id);
+        dispatch(setAuthUserData(id, email, login, true, null));
     }
 }
 
@@ -80,7 +78,7 @@ export const logout = () => async (dispatch) => {
     let response = await authAPI.logout();
         
     if (response.data.resultCode === 0) {
-        dispatch(setAuthUserData(null, null, null, false));
+        dispatch(setAuthUserData(null, null, null, false, null));
     }
 }
 

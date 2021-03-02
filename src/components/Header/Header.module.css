@@ -13,6 +13,7 @@
 
 .loginBlock {
 	margin-left: auto;
+	margin-right: 10px;
 }
 
 .loginBlock a {
@@ -30,4 +31,8 @@
 
 .buttonLogout {
 	cursor: pointer;
+}
+
+.smallAvatar {
+	border-radius: 100%;
 }

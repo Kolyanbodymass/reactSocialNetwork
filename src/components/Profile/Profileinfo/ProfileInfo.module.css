@@ -25,12 +25,3 @@ img {
 .inputFile {
 	display: none;
 }
-
-.inputFileButton {
-	background-color: #48B2F4;
-	border-radius: 10px;
-    padding: 2px 15px;
-    font-size: 11px;
-	color: #B7E1FA;
-	cursor: pointer;
-}

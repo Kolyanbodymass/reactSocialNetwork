@@ -6,7 +6,7 @@ import ProfileInfo from './Profileinfo/ProfileInfo';
 const Profile = (props) => {
     return (
         <div>
-            <img className={styles.img} src='https://www.imgworlds.com/wp-content/uploads/2015/12/generic.jpg' />
+            <img className={styles.img} src='https://www.imgworlds.com/wp-content/uploads/2015/12/generic.jpg' alt="headers profile"/>
             <div className={styles.profile}>
                 <ProfileInfo savePhoto={props.savePhoto} 
                     isOwner={props.isOwner} 
