@@ -27,13 +27,23 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
         );
     }
 
+    let loadInput = null;
+
+    function handleClick() {
+        loadInput.click();
+    }
+
     return (
         <div className={styles.descriptionBlock}>
-            <div className={styles.photo}>
-                <img src={profile.photos.large || defaultPhoto} className={styles.photo} alt="profile photo"/>
+            <div>
+                <img onClick={handleClick} src={profile.photos.large || defaultPhoto} className={styles.photo}  alt="profile photo" title="upload new photo"/>
             </div>
             <div>
-                {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                {isOwner && 
+                    <div className={styles.wrapperInput}>
+                        <input ref={(input) => { loadInput = input; }} className={styles.inputFile} type={"file"} id="input__file" onChange={onMainPhotoSelected}/>
+                        <label className={styles.inputFileButton} for="input__file">Upload new photo</label>
+                    </div>}
             </div>
             {editMode ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
             <ProfileStatusWithHooks status={status} updateStatus={updateStatus} errorStatus={errorStatus}/>

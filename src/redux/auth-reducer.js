@@ -51,7 +51,7 @@ export const getAuthUserData = () => async (dispatch) => {
 
 export const getAuthUserPhoto = (id) => async (dispatch) => {
     let response = await headerAPI.getHeaderPhoto(id);
-    debugger;
+
     dispatch(setAuthUserPhoto(response.data.photos));    
 }
 
