@@ -12,7 +12,7 @@ const Header = (props) => {
             <img src={subscribe} alt="logo"/>
 
             <div className={styles.loginBlock}>
-                {props.isAuth ? <div>{props.login} - <button className={classNames("button", styles.buttonLogout)} onClick={props.logout}>Log out</button></div> : <NavLink to={'/login'}>Login</NavLink>}
+                {props.isAuth ? <div className={styles.loginName}>{props.login} - <button className={classNames("button", styles.buttonLogout)} onClick={props.logout}>Log out</button></div> : <NavLink to={'/login'}>Login</NavLink>}
                 
             </div>
             <NavLink to={'/profile'} className={styles.avatarAuth}>           

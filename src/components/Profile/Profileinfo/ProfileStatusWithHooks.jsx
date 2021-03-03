@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import styles from '../../common/FormsControls/FormsControls.module.css';
+import stylesForms from '../../common/FormsControls/FormsControls.module.css';
+import styles from './ProfileInfo.module.css';
 
 const ProfileStatusWithHooks = (props) => {
     
@@ -24,14 +25,14 @@ const ProfileStatusWithHooks = (props) => {
     }
 
     return (
-        <div>
+        <div className={styles.statusWrapper}>
             { !editMode &&
                 <div>
-                    Status: <span onDoubleClick={activateEditMode}>{props.status || '------'}</span>
+                    Status: <span className={styles.status} onDoubleClick={activateEditMode}>{props.status || '------'}</span>
                 </div>
             }
             { editMode && 
-                <div>
+                <div className={styles.wrappInput}>
                     <input onChange={onStatusChange} 
                     autoFocus={true}
                     onBlur={deactivateEditMode}
@@ -39,7 +40,7 @@ const ProfileStatusWithHooks = (props) => {
                 </div>
             }
             <div>
-                {props.errorStatus && <div className={styles.formSummaryError}>{props.errorStatus}</div>}
+                {props.errorStatus && <div className={stylesForms.formSummaryError}>{props.errorStatus}</div>}
             </div>
         </div>
     )    

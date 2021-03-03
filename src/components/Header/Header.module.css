@@ -36,3 +36,8 @@
 .smallAvatar {
 	border-radius: 100%;
 }
+
+.loginName {
+	color: #878B90;
+	cursor: pointer;
+}

@@ -25,3 +25,33 @@ img {
 .inputFile {
 	display: none;
 }
+
+.profileData {
+	margin-top: 15px;
+}
+
+.svgProfile {
+	fill: #25A4F1;
+	cursor: pointer;
+    margin-left: auto;
+    display: block;
+}
+
+.statusWrapper {
+	text-align: center;
+	margin: 20px;
+	text-transform: lowercase;
+    color: #878B90;
+	font-weight: 600;
+}
+
+.status {
+	color: #25A4F1;
+	text-transform: none;
+}
+
+.wrappInput input {
+	padding: 5px 10px;
+	border-radius: 3px;
+	box-shadow: 0 0 5px rgb(72 178 244);
+}

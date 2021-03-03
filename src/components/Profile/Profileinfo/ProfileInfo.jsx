@@ -4,6 +4,7 @@ import styles from './ProfileInfo.module.css';
 import defaultPhoto from '../../../assets/images/default_photo.jpg';
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import ProfileDataForm from './ProfileDataForm';
+import {IconSettingsMenuItem} from '../../Navbar/NavbarConstants';
 
 const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile, errorStatus}) => {
 
@@ -45,15 +46,15 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                         <label className="button" htmlFor="input__file">Upload new photo</label>
                     </div>}
             </div>
-            {editMode ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
             <ProfileStatusWithHooks status={status} updateStatus={updateStatus} errorStatus={errorStatus}/>
+            {editMode ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit} /> : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
         </div>
     );
 }
 
 const ProfileData = ({profile, isOwner, goToEditMode}) => {
-    return <div>
-            {isOwner && <div><button onClick={goToEditMode}>edit</button></div>}
+    return <div className={styles.profileData}>
+            {isOwner && <div><a onClick={goToEditMode}><IconSettingsMenuItem cssClass={styles.svgProfile} /></a></div>}
             <div>
                 Full Name: {profile.fullName}
             </div>

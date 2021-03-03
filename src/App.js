@@ -4,7 +4,6 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import News from './components/News/News.jsx';
 import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings.jsx';
-// import { BrowserRouter, Route, withRouter, Redirect } from 'react-router-dom';
 import { HashRouter, Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import UsersContainer from './components/Users/UsersContainer.jsx';
 import LoginPage from './components/Login/Login';
@@ -18,9 +17,7 @@ import './App.css';
 import Preloader from './components/common/Preloader/Preloader.js';
 import {withSuspense} from './hoc/withSuspense';
 
-// import DialogsContainer from './components/Dialogs/DialogsContainer.jsx';
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-// import ProfileContainer from './components/Profile/ProfileContainer';
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 
@@ -83,13 +80,6 @@ const AppContainer = compose(
 	withRouter,
 	connect(mapStateToProps, {initializeApp}))(App);
 
-// const SamuraiJSApp = (props) => {
-// 	return <BrowserRouter basename={process.env.PUBLIC_URL}>
-// 		<Provider store={store}>
-// 			<AppContainer />
-// 		</Provider>
-// 	</BrowserRouter>
-// }
 const SamuraiJSApp = (props) => {
 	return <HashRouter>
 		<Provider store={store}>

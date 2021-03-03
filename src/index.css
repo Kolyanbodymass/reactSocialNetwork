@@ -30,4 +30,13 @@ code {
 
 button:active, button:focus {
 	outline: none;
-  }
+}
+
+input {
+	background-color: #6e7073;
+}
+
+input, input:active, input:focus {
+	outline: none;
+	border: none;
+}
