@@ -56,23 +56,26 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return <div className={styles.profileData}>
             {isOwner && <div><a onClick={goToEditMode}><IconSettingsMenuItem cssClass={styles.svgProfile} /></a></div>}
             <div>
-                Full Name: {profile.fullName}
+                <span className={styles.contactTitle}>Full Name: </span> <span className={styles.contactValue}>{profile.fullName}</span>
             </div>
             <div>
                 <div>
-                    Looking for a job? {profile.lookingForAJob ? 'Yes, it is!' : 'No, already working'}
+                    <span className={styles.contactTitle}>Looking for a job? </span> <span className={styles.contactValue}>{profile.lookingForAJob ? 'Yes, it is!' : 'No, already working'}</span>
                 </div>
                 {profile.lookingForAJob && 
                 <div>
-                    My professional skills: {profile.lookingForAJobDescription}
+                    <span className={styles.contactTitle}>My professional skills: </span> <span className={styles.contactValue}>{profile.lookingForAJobDescription}</span>
                 </div>
                 }
                 <div>
-                    About me: {profile.aboutMe}
+                    <span className={styles.contactTitle}>About me: </span> <span className={styles.contactValue}>{profile.aboutMe}</span>
                 </div>
                 <div>
-                    Contacts: {Object.keys(profile.contacts).map(key => {
-                        return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} />
+                    <div className={styles.contacts}>Contacts: </div>{Object.keys(profile.contacts).map(key => {
+                        return (
+                            profile.contacts[key] ?
+                            <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} /> : null
+                        )                   
                     })}
                 </div>
             </div>
@@ -80,7 +83,10 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
 }
 
 const Contact = ({contactTitle, contactValue}) => {
-    return <div>{contactTitle}: {contactValue}</div>
+    return <div>
+            <span className={styles.contactTitle}>{contactTitle}: </span>
+            <span className={styles.contactValue}>{contactValue}</span>
+        </div>
 }
 
 export default ProfileInfo;

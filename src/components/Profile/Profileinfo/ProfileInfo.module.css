@@ -28,6 +28,8 @@ img {
 
 .profileData {
 	margin-top: 15px;
+	color: #878B90;
+    line-height: 30px;
 }
 
 .svgProfile {
@@ -50,8 +52,16 @@ img {
 	text-transform: none;
 }
 
-.wrappInput input {
-	padding: 5px 10px;
-	border-radius: 3px;
-	box-shadow: 0 0 5px rgb(72 178 244);
+.contacts {
+	text-align: center;
+	margin-top: 15px;
+}
+
+.contactTitle {
+	font-size: 15px;
+}
+
+.contactValue {
+	font-weight: 600;
+    color: #ccd0d6;
 }

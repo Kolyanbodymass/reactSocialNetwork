@@ -12,3 +12,19 @@
     padding: 5px;
     color: rosybrown;
 }
+
+.contactTitleInput {
+	color: #ccd0d6;
+}
+
+.formControls {
+    margin: 10px;
+}
+
+.formControls textarea {
+    color: white;
+}
+
+.formControls textarea::placeholder {
+    color: white;
+}

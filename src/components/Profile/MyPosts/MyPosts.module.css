@@ -7,3 +7,11 @@
 .posts {
     margin-top: 10px;
 }
+
+.title {
+    text-align: center;
+}
+
+.formControls textarea {
+    color: white;
+}
