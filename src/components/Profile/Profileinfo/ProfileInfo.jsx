@@ -11,7 +11,7 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
     let [editMode, setEditMode] = useState(false);
 
     if (!profile) {
-        return <Preloader />
+        return <Preloader preloaderClass={styles.profileInfoPreloader}/>
     }
 
     const onMainPhotoSelected = (e) => {

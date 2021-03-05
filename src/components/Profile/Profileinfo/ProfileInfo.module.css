@@ -65,3 +65,10 @@ img {
 	font-weight: 600;
     color: #ccd0d6;
 }
+
+.profileInfoPreloader {
+	display: block;
+	display: block;
+    padding-top: 50%;
+    transform: translateY(-15px);
+}

@@ -23,7 +23,7 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newPost = {
                 id: 5,
-                message: action.newPostBody,
+                message: action.newPostText,
                 likesCount: 0
             };
             return {
@@ -52,7 +52,7 @@ const profileReducer = (state = initialState, action) => {
     }
 }
 
-export const addPostActionCreator = (newPostBody) => ({ type: ADD_POST, newPostBody })
+export const addPostActionCreator = (newPostText) => ({ type: ADD_POST, newPostText })
 export const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({ type: SET_STATUS, status})
 export const deletePost = (postId) => ({ type: DELETE_POST, postId})

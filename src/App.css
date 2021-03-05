@@ -15,3 +15,11 @@
 	background-color: #262D37;
 	border-radius: 0 0 10px;
 }
+
+.preloader {
+	width: 150px;
+	position: absolute;
+	left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
