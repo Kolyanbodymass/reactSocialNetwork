@@ -7,11 +7,12 @@ const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
 const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
 const SET_ERROR_STATUS = 'SET_ERROR_STATUS';
+const SET_POST_PHOTO = "SET_POST_PHOTO";
 
 let initialState = {
     posts: [
-        {id: 1, message: 'Hi, how are you?', likesCount: 12},
-        {id: 2, message: 'It\'s my first post', likesCount: 3}
+        {id: 1, photo: null, message: 'Hi, how are you?', likesCount: 12},
+        {id: 2, photo: null, message: 'It\'s my first post', likesCount: 3}
     ],
     profile: null,
     status: '',
@@ -47,6 +48,11 @@ const profileReducer = (state = initialState, action) => {
         case SET_ERROR_STATUS: {
             return {...state, errorStatus: action.errorStatus}
         }
+        case SET_POST_PHOTO: {
+            let obj = {...state, posts: [...state.posts]}
+            obj.posts.forEach(e => {e.photo = action.photo;})
+            return obj;
+        }
         default: 
             return state;
     }
@@ -58,11 +64,13 @@ export const setStatus = (status) => ({ type: SET_STATUS, status})
 export const deletePost = (postId) => ({ type: DELETE_POST, postId})
 export const savePhotoSuccess = (photos) => ({ type: SAVE_PHOTO_SUCCESS, photos})
 export const setErrorStatus = (errorStatus) => ({ type: SET_ERROR_STATUS, errorStatus})
+export const setPostPhoto = (photo) => ({type: SET_POST_PHOTO, photo})
 
 export const getUserProfile = (userId) => async (dispatch) => {
     let response = await usersAPI.getProfile(userId);
 
     dispatch(setUserProfile(response.data));
+    dispatch(setPostPhoto(response.data.photos.small))
 }
 
 export const getStatus = (userId) => async (dispatch) => {
@@ -107,5 +115,7 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
         return Promise.reject(string);
     }
 }
+
+
 
 export default profileReducer; 
