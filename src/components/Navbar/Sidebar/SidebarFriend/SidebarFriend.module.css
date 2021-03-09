@@ -1,7 +1,14 @@
 .item {
-	color: greenyellow;
+	color: #25A4F1;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	row-gap: 10px;
 }
 
 .item img {
-	width: 50px;
+	width: 30px;
+	height: 30px;
+    border-radius: 100%;
 }

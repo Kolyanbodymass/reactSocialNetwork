@@ -1,3 +1,13 @@
 .sidebar {
 	margin-top: 50px;
 }
+
+.title {
+	color: #25A4F1;
+    margin-bottom: 10px;
+}
+
+.itemsWrapper {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
