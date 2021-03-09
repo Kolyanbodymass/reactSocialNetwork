@@ -1,12 +1,16 @@
 import React from 'react';
-import P from './Post.module.css';
+import styles from './Post.module.css';
 
 const Post = ({ message, likeCount, photo }) => {
 
     return (
-        <div className={P.item}>
-            <img src={photo} alt="avatarka" />
+        <div className={styles.item}>
+            <div>
+                <img src={photo} alt="avatarka" />
+            </div>
+            <div className={styles.message}>
                 {message}
+            </div>
             <div>
                 <span>Like {likeCount}</span>
             </div>
