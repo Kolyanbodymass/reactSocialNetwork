@@ -2,7 +2,7 @@ import React from 'react';
 import D from './Dialogs.module.css';
 import Message from './Message/Message.jsx';
 import DialogItem from './DialogItem/DialogItem.jsx';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, reset} from 'redux-form';
 import {Textarea} from '../../components/common/FormsControls/FormsControls';
 import {required, maxLengthCreator} from '../../utils/validators/validators';
 
@@ -46,6 +46,10 @@ const AddMessageForm = (props) => {
     )
 }
 
-const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm'})(AddMessageForm);
+const afterSubmit = (result, dispatch) => {
+    dispatch(reset('dialogAddMessageForm'));
+}
+
+const AddMessageFormRedux = reduxForm({form: 'dialogAddMessageForm', onSubmitSuccess: afterSubmit})(AddMessageForm);
 
 export default Dialogs;

@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './MyPosts.module.css';
 import Post from './Post/Post';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, reset} from 'redux-form';
 import {required, maxLengthCreator} from '../../../utils/validators/validators';
 import {Textarea} from '../../common/FormsControls/FormsControls';
 
 const maxLength10 = maxLengthCreator(30);
 
 const AddPostForm = (props) => {
+
     return (
         <form onSubmit={props.handleSubmit}>
             <Field component={Textarea} 
@@ -19,14 +20,18 @@ const AddPostForm = (props) => {
     )
 }
 
-let AddPostFormRedux = reduxForm({form: 'messageAddPostForm'})(AddPostForm);
+const afterSubmit = (result, dispatch) => {
+    dispatch(reset('messageAddPostForm'));
+}
+  
+let AddPostFormRedux = reduxForm({form: 'messageAddPostForm', onSubmitSuccess: afterSubmit})(AddPostForm);
 
 const MyPosts = React.memo((props) => {
 
     let postsElements = [...props.posts].reverse().map( p => <Post message={p.message} likeCount={p.likesCount} photo={p.photo} key={p.id} id={p.id} /> ); // Посты в обратном порядке
 
     let addNewPost = (values) => {
-        props.addPost(values.newPostText);
+        props.addPost(values.newPostText, props.photos);
     } 
 
     return (

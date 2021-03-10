@@ -1,4 +1,5 @@
 import {usersAPI, profileAPI} from '../Api/Api';
+import {setAuthUserPhoto} from './auth-reducer';
 import { stopSubmit } from 'redux-form';
 
 const ADD_POST = 'ADD-POST';
@@ -66,6 +67,11 @@ export const savePhotoSuccess = (photos) => ({ type: SAVE_PHOTO_SUCCESS, photos}
 export const setErrorStatus = (errorStatus) => ({ type: SET_ERROR_STATUS, errorStatus})
 export const setPostPhoto = (photo) => ({type: SET_POST_PHOTO, photo})
 
+export const addPost = (newPostText, photos) => async (dispatch) => {
+    dispatch(addPostActionCreator(newPostText));
+    dispatch(setPostPhoto(photos.small))
+}
+
 export const getUserProfile = (userId) => async (dispatch) => {
     let response = await usersAPI.getProfile(userId);
 
@@ -95,6 +101,8 @@ export const savePhoto = (file) => async (dispatch) => {
 
     if (response.data.resultCode === 0) {
         dispatch(savePhotoSuccess(response.data.data.photos));
+        dispatch(setPostPhoto(response.data.data.photos.small))
+        dispatch(setAuthUserPhoto(response.data.data.photos));
     } 
 }
 
